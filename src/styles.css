@@ -63,25 +63,48 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  /* Serene Indian palette: ivory cream, deep maroon ink, rich gold, terracotta */
+  --background: oklch(0.985 0.012 85);
+  --foreground: oklch(0.28 0.06 25);
+  --card: oklch(0.98 0.015 80);
+  --card-foreground: oklch(0.28 0.06 25);
+  --popover: oklch(0.985 0.012 85);
+  --popover-foreground: oklch(0.28 0.06 25);
+  --primary: oklch(0.42 0.12 30);
+  --primary-foreground: oklch(0.98 0.02 85);
+  --secondary: oklch(0.94 0.04 80);
+  --secondary-foreground: oklch(0.32 0.08 28);
+  --muted: oklch(0.95 0.025 82);
+  --muted-foreground: oklch(0.5 0.05 40);
+  --accent: oklch(0.78 0.14 75);
+  --accent-foreground: oklch(0.28 0.06 25);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0.02 85);
+  --border: oklch(0.88 0.04 75);
+  --input: oklch(0.92 0.03 80);
+  --ring: oklch(0.72 0.14 75);
+
+  /* Brand specific tokens */
+  --gold: oklch(0.78 0.14 80);
+  --gold-deep: oklch(0.62 0.14 65);
+  --gold-soft: oklch(0.88 0.08 85);
+  --maroon: oklch(0.38 0.12 28);
+  --terracotta: oklch(0.58 0.14 38);
+  --ivory: oklch(0.985 0.012 85);
+  --cream: oklch(0.95 0.03 82);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.13 85), oklch(0.65 0.15 60));
+  --gradient-warm: radial-gradient(ellipse at top, oklch(0.97 0.04 80) 0%, oklch(0.92 0.05 75) 60%, oklch(0.88 0.06 70) 100%);
+  --gradient-glow: radial-gradient(circle, oklch(0.85 0.16 80 / 0.5) 0%, transparent 70%);
+
+  --shadow-gold: 0 20px 60px -15px oklch(0.62 0.14 65 / 0.35);
+  --shadow-soft: 0 10px 40px -10px oklch(0.42 0.12 30 / 0.15);
+
+  --font-display: "Cormorant Garamond", "Playfair Display", serif;
+  --font-script: "Tangerine", "Great Vibes", cursive;
+  --font-body: "Cormorant Garamond", serif;
+
+  --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -138,7 +161,63 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background: var(--gradient-warm);
+    background-attachment: fixed;
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer utilities {
+  .font-script { font-family: var(--font-script); }
+  .font-display { font-family: var(--font-display); }
+
+  .text-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .perspective-1000 { perspective: 1500px; }
+  .preserve-3d { transform-style: preserve-3d; }
+
+  .glow-gold {
+    box-shadow: 0 0 60px oklch(0.78 0.16 80 / 0.4), inset 0 0 30px oklch(0.85 0.1 85 / 0.15);
+  }
+
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+    50% { opacity: 0.85; transform: scale(1.05); filter: brightness(1.2); }
+  }
+  .animate-flicker { animation: flicker 2.5s ease-in-out infinite; transform-origin: bottom; }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow { animation: spin-slow 60s linear infinite; }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 }

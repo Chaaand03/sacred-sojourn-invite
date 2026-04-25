@@ -76,13 +76,13 @@ function Hero() {
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden perspective-1000">
       {/* Background mandala */}
-      <motion.div
+      {/* <motion.div
         style={{ rotate: mandalaRot, opacity: 0.35 }}
         className="absolute -top-40 left-1/2 -translate-x-1/2 pointer-events-none"
       >
         <Mandala size={900} className="hidden md:block" />
         <Mandala size={520} className="md:hidden" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Toran across the top */}
       <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none">
@@ -111,9 +111,9 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="text-sm md:text-base tracking-[0.5em] uppercase text-[var(--gold-deep)] mb-6"
+          className="text-sm md:text-base tracking-[0.2em] uppercase text-[var(--gold-deep)] mb-6"
         >
-          ॥ शुभ गृह प्रवेश ॥
+          ॥ ಓಂ ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ॥
         </motion.p>
 
         <motion.h1
@@ -122,7 +122,7 @@ function Hero() {
           transition={{ delay: 0.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="font-script text-7xl md:text-9xl lg:text-[10rem] leading-none text-gold drop-shadow-sm"
         >
-          Gruhapravesham
+          Gruhapravesha Aamantrana
         </motion.h1>
 
         <motion.div
@@ -132,14 +132,14 @@ function Hero() {
           className="divider-gold w-64 md:w-96 mt-6"
         />
 
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 1 }}
-          className="font-display italic text-3xl md:text-5xl mt-8 text-[var(--maroon)]"
+          className="font-display italic text-5xl md:text-5xl mt-8 text-[var(--maroon)]"
         >
-          Anand Nivas
-        </motion.h2>
+          Charvi Kunj
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -147,25 +147,31 @@ function Hero() {
           transition={{ delay: 1.8, duration: 1 }}
           className="mt-4 text-base md:text-lg text-muted-foreground max-w-md"
         >
-          The abode of bliss — a new beginning blessed by family and friends
+          A new beginning blessed by family and friends
         </motion.p>
 
         {/* Diyas at the bottom */}
         <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-8 md:gap-16 px-6">
-          <div className="w-16 md:w-24"><Diya /></div>
-          <div className="w-20 md:w-32"><Diya /></div>
-          <div className="w-16 md:w-24"><Diya /></div>
+          <div className="w-16 md:w-24">
+            <Diya />
+          </div>
+          <div className="w-20 md:w-32">
+            <Diya />
+          </div>
+          <div className="w-16 md:w-24">
+            <Diya />
+          </div>
         </div>
       </motion.div>
 
       {/* Scroll cue */}
-      <motion.div
+      {/* <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs tracking-widest text-[var(--gold-deep)] z-20"
       >
         ◆ scroll ◆
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }
@@ -185,10 +191,9 @@ function Invitation() {
         <p className="font-script text-5xl md:text-6xl text-gold mb-6">With joyful hearts</p>
         <div className="divider-gold w-32 mx-auto mb-8" />
         <p className="font-display text-xl md:text-2xl leading-relaxed text-[var(--maroon)] italic">
-          As we step into our new home, we humbly invite you to grace this auspicious occasion
-          with your presence. Your blessings, warmth and laughter will turn these walls into a
-          sanctuary of memories. Let us share prayers, sweets and the gentle glow of diyas
-          together.
+          As we step into our new home, we humbly invite you to grace this auspicious occasion with
+          your presence. Your blessings, warmth and laughter will turn these walls into a sanctuary
+          of memories. Let us share prayers, sweets and the gentle glow of diyas together.
         </p>
         <p className="mt-10 font-display text-lg md:text-xl text-muted-foreground">
           — pray, dine & celebrate with us —
@@ -218,14 +223,14 @@ function DateTime() {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-4 items-center text-center">
             <div>
-              <p className="font-script text-3xl text-[var(--maroon)]">Sunday</p>
+              <p className="font-script text-3xl text-[var(--maroon)]">Thursday</p>
               <p className="font-display text-sm uppercase tracking-widest text-muted-foreground mt-2">
                 Day
               </p>
             </div>
             <div className="md:border-x border-[var(--gold)]/40 md:py-4">
-              <p className="font-display text-7xl md:text-8xl text-gold leading-none">14</p>
-              <p className="font-display text-2xl text-[var(--maroon)] mt-2">December 2025</p>
+              <p className="font-display text-7xl md:text-8xl text-gold leading-none">07</p>
+              <p className="font-display text-2xl text-[var(--maroon)] mt-2">May 2026</p>
             </div>
             <div>
               <p className="font-script text-3xl text-[var(--maroon)]">10:30 AM</p>
@@ -237,7 +242,7 @@ function DateTime() {
 
           <div className="divider-gold w-48 mx-auto mt-12 mb-6" />
           <p className="text-center font-display italic text-lg text-[var(--maroon)]">
-            Griha Pravesh Pooja followed by lunch
+            Griha Pravesha Pooja followed by lunch
           </p>
         </div>
       </Reveal3D>
@@ -246,44 +251,104 @@ function DateTime() {
 }
 
 /* ---------- Family ---------- */
+
 function Family() {
-  const members = ["Rajesh Sharma", "Priya Sharma", "Aarav Sharma", "Ananya Sharma"];
+  const members = ["Smt. Nagarathna H M", "Shri. Virupakshappa M P", "&", "Chandan V"];
+
   return (
     <section className="relative py-32 px-6 perspective-1000 overflow-hidden">
       <Reveal3D from="right" className="max-w-4xl mx-auto text-center">
-        <p className="text-sm tracking-[0.5em] uppercase text-[var(--gold-deep)] mb-4">
-          With Love
-        </p>
-        <h2 className="font-script text-6xl md:text-7xl text-gold">The Sharma Family</h2>
+        <p className="text-sm tracking-[0.5em] uppercase text-[var(--gold-deep)] mb-4">With Love</p>
+
+        <h2 className="font-script text-6xl md:text-7xl text-gold">The Family</h2>
+
         <div className="divider-gold w-32 mx-auto my-10" />
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {members.map((name, i) => (
-            <motion.div
-              key={name}
-              initial={{ opacity: 0, y: 40, rotateY: -30 }}
-              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-[var(--cream)]/60 backdrop-blur-sm border border-[var(--gold)]/30 rounded-2xl px-4 py-8"
-              style={{ boxShadow: "var(--shadow-soft)" }}
-            >
-              <div className="w-12 mx-auto mb-3 opacity-80">
-                <Marigold />
-              </div>
-              <p className="font-display text-lg md:text-xl text-[var(--maroon)]">{name}</p>
-            </motion.div>
-          ))}
-        </div>
+        {/* SINGLE FRAME */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, rotateX: 10 }}
+          whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto max-w-2xl p-10 rounded-3xl border border-[var(--gold)]/40 bg-[var(--cream)]/40 backdrop-blur-md"
+          style={{
+            boxShadow: "0 20px 60px rgba(0,0,0,0.08)",
+          }}
+        >
+          {/* decorative glow frame */}
+          <div className="absolute inset-0 rounded-3xl border border-[var(--gold)]/20 blur-sm" />
+
+          {/* subtle top ornament */}
+          {/* <div className="flex justify-center mb-6 opacity-80">
+            <Marigold />
+          </div> */}
+
+          {/* Family title inside frame */}
+          <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold-deep)] mb-6">
+            Family Members
+          </p>
+
+          {/* Names stacked elegantly */}
+          <div className="space-y-5">
+            {members.map((name, i) => (
+              <motion.p
+                key={name}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.15 }}
+                className="font-display text-2xl md:text-3xl text-[var(--maroon)] tracking-wide"
+              >
+                {name}
+              </motion.p>
+            ))}
+          </div>
+
+          {/* bottom ornament */}
+          <div className="flex justify-center mt-8 opacity-70 rotate-180">
+            <Marigold />
+          </div>
+        </motion.div>
       </Reveal3D>
     </section>
   );
 }
 
+// function Family() {
+//   const members = ["Rajesh Sharma", "Priya Sharma", "Aarav Sharma", "Ananya Sharma"];
+//   return (
+//     <section className="relative py-32 px-6 perspective-1000 overflow-hidden">
+//       <Reveal3D from="right" className="max-w-4xl mx-auto text-center">
+//         <p className="text-sm tracking-[0.5em] uppercase text-[var(--gold-deep)] mb-4">With Love</p>
+//         <h2 className="font-script text-6xl md:text-7xl text-gold">The Sharma Family</h2>
+//         <div className="divider-gold w-32 mx-auto my-10" />
+
+//         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+//           {members.map((name, i) => (
+//             <motion.div
+//               key={name}
+//               initial={{ opacity: 0, y: 40, rotateY: -30 }}
+//               whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+//               viewport={{ once: true }}
+//               transition={{ delay: i * 0.15, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+//               className="relative bg-[var(--cream)]/60 backdrop-blur-sm border border-[var(--gold)]/30 rounded-2xl px-4 py-8"
+//               style={{ boxShadow: "var(--shadow-soft)" }}
+//             >
+//               <div className="w-12 mx-auto mb-3 opacity-80">
+//                 <Marigold />
+//               </div>
+//               <p className="font-display text-lg md:text-xl text-[var(--maroon)]">{name}</p>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </Reveal3D>
+//     </section>
+//   );
+// }
+
 /* ---------- Venue ---------- */
 function Venue() {
   const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=Anand+Nivas+42+Lotus+Avenue+Jubilee+Hills+Hyderabad";
+    "https://www.google.com/maps/place/12%C2%B022'17.2%22N+76%C2%B035'30.4%22E/@12.371445,76.5891911,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.371445!4d76.591766?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D";
 
   return (
     <section className="relative py-32 px-6 perspective-1000 overflow-hidden">
@@ -297,15 +362,15 @@ function Venue() {
           </div>
 
           <p className="text-sm tracking-[0.4em] uppercase text-[var(--gold-deep)] mb-4">Venue</p>
-          <h2 className="font-script text-5xl md:text-6xl text-gold">Anand Nivas</h2>
+          <h2 className="font-script text-5xl md:text-6xl text-gold">Charvi Kunj</h2>
           <div className="divider-gold w-24 mx-auto my-6" />
 
           <p className="font-display text-xl md:text-2xl text-[var(--maroon)] leading-relaxed">
-            Plot 42, Lotus Avenue
-            <br />
-            Jubilee Hills, Hyderabad
-            <br />
-            Telangana 500033
+            # villa 69 <br />
+            Prithvi Orchids Villa <br />
+            Survey No 15 & 16, Anaganahalli (Pura) Village, <br />
+            Belagola Hobli, Srirangapatna, <br />
+            Mysore Karnatak - 571606 <br />( Next to Emerald Enclave )
           </p>
 
           <motion.a
@@ -340,17 +405,20 @@ function Closing() {
 
       <Reveal3D from="zoom" className="max-w-2xl mx-auto">
         <div className="flex justify-center gap-6 mb-10">
-          <div className="w-16"><Diya /></div>
-          <div className="w-20"><Diya /></div>
-          <div className="w-16"><Diya /></div>
+          <div className="w-16">
+            <Diya />
+          </div>
+          <div className="w-20">
+            <Diya />
+          </div>
+          <div className="w-16">
+            <Diya />
+          </div>
         </div>
-        <p className="font-script text-5xl md:text-6xl text-gold">शुभम् भवतु</p>
+        <p className="font-script text-5xl md:text-6xl text-gold">ಶುಭಂ ಭವತು</p>
         <div className="divider-gold w-40 mx-auto my-8" />
         <p className="font-display italic text-xl md:text-2xl text-[var(--maroon)]">
           May this home be filled with light, love and laughter — always.
-        </p>
-        <p className="mt-8 text-sm tracking-[0.4em] uppercase text-[var(--gold-deep)]">
-          ◆ The Sharma Family ◆
         </p>
       </Reveal3D>
     </section>

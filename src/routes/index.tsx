@@ -75,15 +75,6 @@ function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-screen overflow-hidden perspective-1000">
-      {/* Background mandala */}
-      {/* <motion.div
-        style={{ rotate: mandalaRot, opacity: 0.35 }}
-        className="absolute -top-40 left-1/2 -translate-x-1/2 pointer-events-none"
-      >
-        <Mandala size={900} className="hidden md:block" />
-        <Mandala size={520} className="md:hidden" />
-      </motion.div> */}
-
       {/* Toran across the top */}
       <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none">
         <Toran className="w-full h-full" />
@@ -163,15 +154,6 @@ function Hero() {
           </div>
         </div>
       </motion.div>
-
-      {/* Scroll cue */}
-      {/* <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs tracking-widest text-[var(--gold-deep)] z-20"
-      >
-        ◆ scroll ◆
-      </motion.div> */}
     </section>
   );
 }
@@ -278,11 +260,6 @@ function Family() {
           {/* decorative glow frame */}
           <div className="absolute inset-0 rounded-3xl border border-[var(--gold)]/20 blur-sm" />
 
-          {/* subtle top ornament */}
-          {/* <div className="flex justify-center mb-6 opacity-80">
-            <Marigold />
-          </div> */}
-
           {/* Family title inside frame */}
           <p className="text-xs tracking-[0.4em] uppercase text-[var(--gold-deep)] mb-6">
             Family Members
@@ -312,38 +289,6 @@ function Family() {
     </section>
   );
 }
-
-// function Family() {
-//   const members = ["Rajesh Sharma", "Priya Sharma", "Aarav Sharma", "Ananya Sharma"];
-//   return (
-//     <section className="relative py-32 px-6 perspective-1000 overflow-hidden">
-//       <Reveal3D from="right" className="max-w-4xl mx-auto text-center">
-//         <p className="text-sm tracking-[0.5em] uppercase text-[var(--gold-deep)] mb-4">With Love</p>
-//         <h2 className="font-script text-6xl md:text-7xl text-gold">The Sharma Family</h2>
-//         <div className="divider-gold w-32 mx-auto my-10" />
-
-//         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-//           {members.map((name, i) => (
-//             <motion.div
-//               key={name}
-//               initial={{ opacity: 0, y: 40, rotateY: -30 }}
-//               whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-//               viewport={{ once: true }}
-//               transition={{ delay: i * 0.15, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-//               className="relative bg-[var(--cream)]/60 backdrop-blur-sm border border-[var(--gold)]/30 rounded-2xl px-4 py-8"
-//               style={{ boxShadow: "var(--shadow-soft)" }}
-//             >
-//               <div className="w-12 mx-auto mb-3 opacity-80">
-//                 <Marigold />
-//               </div>
-//               <p className="font-display text-lg md:text-xl text-[var(--maroon)]">{name}</p>
-//             </motion.div>
-//           ))}
-//         </div>
-//       </Reveal3D>
-//     </section>
-//   );
-// }
 
 /* ---------- Venue ---------- */
 function Venue() {

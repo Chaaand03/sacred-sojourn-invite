@@ -11,13 +11,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Gruhapravesham — Welcome to Anand Nivas" },
+      { title: "Gruhapravesha - Welcome to Charvi Kunj" },
       {
         name: "description",
         content:
-          "With joyful hearts, the Sharma family invites you to the housewarming of Anand Nivas. Join us for blessings, prayers and a warm welcome.",
+          "With joyful hearts we invites you to the housewarming of Charvi Kunj. Join us for blessings, prayers and a warm welcome.",
       },
-      { property: "og:title", content: "Gruhapravesham — Anand Nivas" },
+      { property: "og:title", content: "Gruhapravesha Aamantrana" },
       {
         property: "og:description",
         content: "A sacred housewarming ceremony — your presence will bless our new home.",
